@@ -1,7 +1,7 @@
 import Navbar from "./components/navbar"
 import HeroSection from "./components/hero-section"
 import AboutSection from "./components/about-section"
-import CenteredCarousel from "./components/caraousel"
+// import CenteredCarousel from "./components/caraousel"
 import RecognitionSection from "./components/recognition-section"
 import ProductsSection from "./components/products-section"
 import InnovationSection from "./components/innovation-section"
@@ -16,7 +16,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <CenteredCarousel />
+      {/* <CenteredCarousel /> */}
       <RecognitionSection />
       <ProductsSection />
       <InnovationSection />
