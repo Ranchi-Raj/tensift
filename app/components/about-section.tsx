@@ -1,4 +1,4 @@
-import { Target, Users, Leaf, Crown, Award, Sparkles } from "lucide-react"
+import { Target, Crown, Sparkles, Award, Users } from "lucide-react"
 
 export default function AboutSection() {
   return (
@@ -34,7 +34,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mx-auto w-full">
           {/* Content */}
           <div className="space-y-10">
             <div className="relative">
@@ -54,7 +54,7 @@ export default function AboutSection() {
             </div>
 
             {/* Values Grid */}
-            <div className="grid sm:grid-cols-3 gap-6">
+            {/* <div className="grid sm:grid-cols-3 gap-6">
               {[
                 {
                   icon: <Target className="h-8 w-8" />,
@@ -88,14 +88,14 @@ export default function AboutSection() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Vision Card */}
           <div className="relative">
             <div className="absolute -inset-8 bg-gradient-to-r from-[#00ADB5]/30 to-[#180161]/30 rounded-3xl blur-2xl"></div>
             <div className="relative bg-gradient-to-br from-[#00ADB5] via-[#180161] to-[#222831] rounded-3xl p-12 text-white shadow-2xl border border-[#00ADB5]/30">
-              {/* Decorative Elements */}
+              
               <div className="absolute top-6 right-6">
                 <Crown className="h-8 w-8 text-white/30" />
               </div>
@@ -132,6 +132,7 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>

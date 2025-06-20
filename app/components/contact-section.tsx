@@ -85,7 +85,7 @@ export default function ContactSection() {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-2xl p-8 text-white shadow-lg">
+        {/* <div className="bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-2xl p-8 text-white shadow-lg">
           <h3 className="text-xl font-bold mb-4">Why Choose Tensift Farmers?</h3>
           <ul className="space-y-3">
             {[
@@ -100,7 +100,7 @@ export default function ContactSection() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   </div>

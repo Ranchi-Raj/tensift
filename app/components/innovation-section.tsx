@@ -58,27 +58,27 @@ export default function InnovationSection() {
   return (
     <section
       id="innovation"
-      className="py-24 bg-gradient-to-br from-[#222831] via-[#393E46] to-[#180161] text-[#EEEEEE]"
+      className="py-24 bg-gradient-to-br from-[#00ADB5] to-[#180161] text-white"
     >
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-[#00ADB5]/20 to-[#180161]/20 backdrop-blur-sm border border-[#00ADB5]/30 rounded-full px-8 py-4 mb-8">
-            <Crown className="h-6 w-6 text-[#00ADB5]" />
-            <span className="text-lg font-bold bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
+          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4 mb-8">
+            <Crown className="h-6 w-6 text-white" />
+            <span className="text-lg font-bold text-white/80">
               Royal Innovation Excellence
             </span>
-            <Sparkles className="h-6 w-6 text-[#180161]" />
+            <Sparkles className="h-6 w-6 text-white" />
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">Our</span>
+            <span className="text-white">Our</span>
             <br />
-            <span className="bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
               Innovation
             </span>
           </h2>
-          <p className="text-xl text-[#EEEEEE]/80 max-w-4xl mx-auto">
+          <p className="text-xl text-white/70 max-w-4xl mx-auto">
             Pioneering sustainable aquaculture through cutting-edge bioconversion and eco-driven waste transformation.
           </p>
         </div>
@@ -88,11 +88,11 @@ export default function InnovationSection() {
           <div className="grid sm:grid-cols-2 gap-6">
             {innovations.map((innovation, index) => (
               <div key={index} className="group relative">
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#00ADB5]/20 to-[#180161]/20 rounded-2xl blur group-hover:blur-lg transition-all duration-300"></div>
-                <div className="relative bg-gradient-to-br from-[#393E46] to-[#222831] p-8 rounded-2xl border border-[#00ADB5]/20 group-hover:border-[#00ADB5]/40 transition-all duration-500 shadow-xl">
+                <div className="absolute -inset-2 bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="relative bg-white/5 p-8 rounded-2xl border border-white/10 group-hover:border-white/20 transition-all duration-500 backdrop-blur-md shadow-xl">
                   <div className="relative mb-6">
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${innovation.gradient} rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300`}
+                      className={`absolute inset-0 bg-gradient-to-r ${innovation.gradient} rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300`}
                     />
                     <div
                       className={`relative bg-gradient-to-r ${innovation.gradient} p-4 rounded-full inline-block shadow-xl group-hover:scale-110 transition-transform duration-300`}
@@ -100,13 +100,13 @@ export default function InnovationSection() {
                       <div className="text-white">{innovation.icon}</div>
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
+                  <h3 className="text-lg font-bold mb-2 text-white">
                     {innovation.title}
                   </h3>
-                  <p className="text-sm text-[#EEEEEE]/80 leading-relaxed">
+                  <p className="text-sm text-white/80 leading-relaxed">
                     {innovation.description}
                   </p>
-                  <Star className="absolute top-3 right-3 h-4 w-4 text-[#00ADB5]/50 group-hover:text-[#00ADB5] transition-colors duration-300" />
+                  <Star className="absolute top-3 right-3 h-4 w-4 text-white/30 group-hover:text-white transition-colors duration-300" />
                 </div>
               </div>
             ))}
@@ -114,7 +114,7 @@ export default function InnovationSection() {
 
           {/* Technology Highlights + Research */}
           <div className="space-y-10">
-            <div className="bg-gradient-to-br from-[#00ADB5] via-[#180161] to-[#00ADB5] p-10 rounded-3xl shadow-xl border border-[#00ADB5]/30 relative">
+            <div className="bg-white/10 backdrop-blur-md p-10 rounded-3xl shadow-xl border border-white/10 relative">
               <h3 className="text-3xl font-bold mb-8 flex items-center space-x-3">
                 <Lightbulb className="h-8 w-8" />
                 <span>Technology Highlights</span>
@@ -125,27 +125,27 @@ export default function InnovationSection() {
                     <div className="bg-white/20 p-2 rounded-full">
                       <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                     </div>
-                    <span className="text-base">{highlight}</span>
+                    <span className="text-base text-white/80">{highlight}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#393E46] to-[#222831] p-8 rounded-2xl border-2 border-[#00ADB5]/20 shadow-xl">
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-xl">
               <div className="flex items-center space-x-3 mb-4">
-                <Microscope className="h-6 w-6 text-[#00ADB5]" />
-                <h3 className="text-xl font-bold text-[#00ADB5]">Research Partnerships</h3>
+                <Microscope className="h-6 w-6 text-white" />
+                <h3 className="text-xl font-bold text-white">Research Partnerships</h3>
               </div>
-              <p className="text-sm text-[#EEEEEE]/80">
+              <p className="text-sm text-white/80">
                 Our innovation is backed by research with{" "}
-                <span className="font-semibold text-[#00ADB5]">ICAR-CIFA</span> and{" "}
-                <span className="font-semibold text-[#00ADB5]">IIT Bhubaneswar</span>, ensuring scientific rigor in every step.
+                <span className="font-semibold text-white">ICAR-CIFA</span> and{" "}
+                <span className="font-semibold text-white">IIT Bhubaneswar</span>, ensuring scientific rigor in every step.
               </p>
               <div className="flex space-x-4 mt-4">
                 {["ICAR-CIFA", "IIT Bhubaneswar"].map((partner) => (
                   <span
                     key={partner}
-                    className="bg-gradient-to-r from-[#00ADB5]/20 to-[#180161]/20 px-4 py-1 rounded-full text-sm font-medium text-[#00ADB5] border border-[#00ADB5]/30"
+                    className="bg-white/10 px-4 py-1 rounded-full text-sm font-medium text-white border border-white/20"
                   >
                     {partner}
                   </span>

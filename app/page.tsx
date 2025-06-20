@@ -6,7 +6,7 @@ import RecognitionSection from "./components/recognition-section"
 import ProductsSection from "./components/products-section"
 import InnovationSection from "./components/innovation-section"
 import HowItWorksSection from "./components/how-it-works-section"
-import BenefitsSection from "./components/benefits-section"
+// import BenefitsSection from "./components/benefits-section"
 import ContactSection from "./components/contact-section"
 import Footer from "./components/footer"
 
@@ -21,7 +21,7 @@ export default function Home() {
       <ProductsSection />
       <InnovationSection />
       <HowItWorksSection />
-      <BenefitsSection />
+      {/* <BenefitsSection /> */}
       <ContactSection />
       <Footer />
     </div>

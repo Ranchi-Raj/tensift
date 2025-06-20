@@ -57,58 +57,57 @@ export default function BenefitsSection() {
   return (
     <section
       id="benefits"
-      className="relative py-24 bg-gradient-to-br from-[#222831] via-[#393E46] to-[#180161] text-[#111] overflow-hidden"
+      className="relative py-24 bg-gradient-to-br from-[#00ADB5] to-[#180161] text-white overflow-hidden"
     >
-        {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-32 left-32 w-72 h-72 bg-[#00ADB5]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-32 w-96 h-96 bg-[#180161]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#00ADB5]/5 to-[#180161]/5 rounded-full blur-3xl"></div>
+      {/* Background Glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-32 left-32 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#00ADB5] to-[#180161] text-transparent bg-clip-text">
-            <span className="text-white">Benefits</span> for Farmers
+          <h2 className="text-4xl font-bold mb-4">
+            Benefits <span className="text-white/80">for Farmers</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-white/70 max-w-3xl mx-auto">
             Discover how our innovative feed solutions can transform your aquaculture operations and boost profitability.
           </p>
         </div>
 
+        {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-[#393E46] to-[#222831] border-2 border-[#00ADB5]/20 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur"
             >
-               <div className="relative inset-4 bg-gradient-to-r from-[#00ADB5]/40 to-[#180161]/40 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>   
               <div className="flex items-start space-x-4 mb-4">
-                
-                <div className="p-3 rounded-full bg-gradient-to-br from-[#00ADB5]/20 to-[#180161]/10 text-[#00ADB5]">
+                <div className="p-3 rounded-full bg-white/10 text-white">
                   {benefit.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-4 bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">{benefit.title}</h3>
-                  <p className="text-gray-400 text-sm">{benefit.description}</p>
+                  <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-white/70 text-sm">{benefit.description}</p>
                 </div>
               </div>
-              <div className="border-t border-gray-200 pt-4 text-center">
-                <div className="text-3xl font-bold text-[#00ADB5]">{benefit.stat}</div>
-                <div className="text-sm text-gray-300">{benefit.statLabel}</div>
+              <div className="border-t border-white/10 pt-4 text-center">
+                <div className="text-3xl font-bold">{benefit.stat}</div>
+                <div className="text-sm text-white/60">{benefit.statLabel}</div>
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA Box */}
-        <div className="bg-gradient-to-r from-[#00ADB5] to-[#180161] text-white rounded-2xl p-10 lg:p-14 shadow-xl">
+        <div className="bg-white/10 text-white rounded-2xl p-10 lg:p-14 shadow-xl backdrop-blur">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Farm?</h3>
-              <p className="text-base opacity-90 mb-6">
-                Join hundreds of successful farmers who have already experienced the benefits of our sustainable feed
-                solutions.
+              <p className="text-base text-white/80 mb-6">
+                Join hundreds of successful farmers who have already experienced the benefits of our sustainable feed solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-white text-[#00ADB5] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
@@ -121,22 +120,17 @@ export default function BenefitsSection() {
             </div>
 
             <div className="grid grid-cols-2 gap-6 text-center">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-3xl font-bold mb-2">₹50L+</div>
-                <div className="text-sm">Farmer Savings</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-3xl font-bold mb-2">1000+</div>
-                <div className="text-sm">Tons Feed Produced</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-3xl font-bold mb-2">95%</div>
-                <div className="text-sm">Customer Satisfaction</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-3xl font-bold mb-2">2</div>
-                <div className="text-sm">Countries Served</div>
-              </div>
+              {[
+                { label: "Farmer Savings", value: "₹50L+" },
+                { label: "Tons Feed Produced", value: "1000+" },
+                { label: "Customer Satisfaction", value: "95%" },
+                { label: "Countries Served", value: "2" },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white/10 p-6 rounded-xl backdrop-blur">
+                  <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
