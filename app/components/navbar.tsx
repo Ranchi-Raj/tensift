@@ -38,8 +38,8 @@ export default function Navbar() {
             </div>
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-lg blur opacity-30" />
-              <div className="relative bg-[#1a1a2e]/80 px-4 py-2 rounded-lg border border-[#00ADB5]/30">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
+              <div className="relative bg-[#1a1a2e]/30 px-4 py-2 rounded-lg border border-[#00ADB5]/30">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-[#00ADB5]">
                   Tensift Farmers
                 </h1>
                 <p className="text-xs text-[#E5F9FF]/70 font-medium">Fertilizer Pvt. Ltd.</p>
