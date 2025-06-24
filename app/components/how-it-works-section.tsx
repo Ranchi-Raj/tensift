@@ -1,4 +1,4 @@
-import { Trash2, Bug, Fish, Truck, Crown, Star, ArrowRight } from "lucide-react";
+import { Trash2, Bug, Fish, Truck, Crown, Star } from "lucide-react";
 
 export default function HowItWorksSection() {
   const steps = [
