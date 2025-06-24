@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function ProductsSection() {
   const [openDialog, setOpenDialog] = useState<number | null>(null)
@@ -90,6 +91,38 @@ export default function ProductsSection() {
       gradient: "from-[#180161] to-[#00ADB5]",
       image: "/carp-starter.jpg",
     },
+    {
+      title : "CIFA FISH FEED",
+      description: "Premium fish feed for various species, ensuring optimal growth and health.",
+      detailedDescription: "CIFA Fish Feed is a versatile and high-quality feed suitable for a wide range of fish species. Formulated with balanced nutrients, it promotes healthy growth, enhances immune response, and improves overall fish health. Ideal for both freshwater and marine aquaculture systems.",
+      features: ["Versatile Nutrition", "Healthy Growth", "Immune Support"],  
+      specifications: [
+        "Protein: 30-35%",
+        "Fat: 5-8%",
+        "Fiber: 4-6%",
+        "Ash: 10-12%",
+        "Moisture: <10%"
+      ],
+      badge: "Fish Feed",
+      gradient: "from-[#00ADB5] to-[#180161]",
+      image: "/fish-feed.jpg",
+    },
+    {
+      title : "FISH FEED and FERTILIZER",
+      description: "Dual-purpose feed and fertilizer for aquaculture systems, enhancing both fish growth and water quality.",
+      detailedDescription: "This innovative product serves as both a high-quality fish feed and an organic fertilizer, enriching the aquatic environment while promoting optimal fish growth. The nutrient-rich formulation supports healthy fish development and improves water quality, making it ideal for integrated aquaculture systems.",
+      features: ["Dual Purpose", "Water Quality Improvement", "Sustainable Aquaculture"],
+      specifications: [
+        "Protein: 25-30%",
+        "Fat: 4-6%",
+        "Organic Matter: 20-25%",
+        "Nutrient Release: Slow",
+        "Application Rate: 1-2% of water volume"
+      ],
+      badge: "Eco-Friendly",
+      gradient: "from-[#180161] to-[#00ADB5]",
+      image: "/inno-fish-feed.jpg",
+    }
   ]
 
   return (
@@ -114,13 +147,13 @@ export default function ProductsSection() {
             <Star className="h-6 w-6 text-[#180161]" />
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Our{" "}
             <span className="bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
-              Royal Products
+              Tensift Products
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Innovative, sustainable products designed to enhance aquaculture productivity while supporting environmental
             conservation with <span className="text-[#00ADB5] font-semibold">unmatched quality</span>.
           </p>
@@ -215,10 +248,12 @@ export default function ProductsSection() {
                         {/* Product Image */}
                         <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                           <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border-2 border-[#00ADB5]/20">
-                            <img 
+                            <Image
+                              width={500}
+                              height={500}
                               src={product.image} 
                               alt={product.title} 
-                              className="w-full h-48 sm:h-56 lg:h-64 object-cover"
+                              className="w-full h-64 sm:h-56 lg:h-64 object-fit"
                             />
                           </div>
                           
