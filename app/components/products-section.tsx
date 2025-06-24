@@ -147,190 +147,151 @@ export default function ProductsSection() {
             <Star className="h-6 w-6 text-[#180161]" />
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
             Our{" "}
             <span className="bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
               Tensift Products
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-md text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Innovative, sustainable products designed to enhance aquaculture productivity while supporting environmental
             conservation with <span className="text-[#00ADB5] font-semibold">unmatched quality</span>.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid lg:grid-cols-3 gap-10 mb-20">
-          {products.map((product, index) => (
-            <div key={index} className="group relative">
-              {/* Glow Effect */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-[#00ADB5]/20 to-[#180161]/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+    {products.map((product, index) => (
+      <div key={index} className="group relative">
+        {/* Glow Effect */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-[#00ADB5]/10 to-[#180161]/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500" />
 
-              <Card className="relative bg-card/90 backdrop-blur-sm border-2 border-[#00ADB5]/20 shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-3xl overflow-hidden group-hover:border-[#00ADB5]/40">
-                {/* Badge */}
-                <div className="absolute -top-3 right-6 z-10">
-                  <div
-                    className={`bg-gradient-to-r ${product.gradient} px-4 py-2 rounded-full text-sm font-bold text-white shadow-lg border border-white/20`}
-                  >
-                    {product.badge}
+        <Card className="relative bg-card/80 backdrop-blur-sm border border-[#00ADB5]/10 hover:border-[#00ADB5]/30 transition-all duration-500 rounded-2xl overflow-hidden shadow-lg">
+          {/* Badge */}
+          <div className="absolute -top-2 right-4 z-10">
+            <div className={`bg-gradient-to-r ${product.gradient} px-3 py-1 rounded-full text-xs font-bold text-white shadow border border-white/10`}>
+              {product.badge}
+            </div>
+          </div>
+
+          <CardHeader className="text-center pb-5 pt-6 relative">
+            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-br from-[#00ADB5]/5 to-[#180161]/5 rounded-t-2xl" />
+            <div className="relative z-10">
+              <div className="relative mb-4">
+                <div className={`absolute inset-0 bg-gradient-to-r ${product.gradient} rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity`} />
+              </div>
+              <CardTitle className="text-lg sm:text-xl text-foreground mb-2 group-hover:text-[#00ADB5] transition-colors">
+                {product.title}
+              </CardTitle>
+              <CardDescription className="text-muted-foreground text-sm sm:text-base leading-snug">
+                {product.description}
+              </CardDescription>
+            </div>
+          </CardHeader>
+
+          <CardContent className="px-6 pb-6">
+            <Dialog open={openDialog === index} onOpenChange={(open) => setOpenDialog(open ? index : null)}>
+              <DialogTrigger asChild>
+                <Button className={`w-full bg-gradient-to-r ${product.gradient} hover:opacity-90 text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-all hover:scale-[1.02]`}>
+                  View Details
+                  <Sparkles className="ml-2 h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-[95vw] sm:max-w-2xl lg:max-w-4xl max-h-[90vh] overflow-y-auto bg-card border border-[#00ADB5]/20">
+                <DialogHeader className="relative">
+                  <div className="absolute -top-5 -left-5 -right-5 h-16 bg-gradient-to-r from-[#00ADB5]/10 to-[#180161]/10 rounded-t-2xl" />
+                  <div className="relative z-10 pt-3">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className={`bg-gradient-to-r ${product.gradient} px-4 py-1 rounded-full text-xs font-bold text-white shadow`}>
+                        {product.badge}
+                      </div>
+                    </div>
+                    <DialogTitle className="text-xl sm:text-2xl font-bold text-center bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent mb-3">
+                      {product.title}
+                    </DialogTitle>
+                  </div>
+                </DialogHeader>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                  <div className="space-y-4">
+                    <div className="rounded-xl overflow-hidden shadow border border-[#00ADB5]/10">
+                      <Image
+                        width={500}
+                        height={500}
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full h-64 sm:h-64 object-fit"
+                      />
+                    </div>
+
+                    <div className="bg-gradient-to-br from-[#00ADB5]/5 to-[#180161]/5 rounded-xl p-4 border border-[#00ADB5]/10">
+                      <h4 className="text-base font-bold text-foreground mb-3 flex items-center">
+                        <Star className="h-4 w-4 text-[#00ADB5] mr-2" />
+                        Key Features
+                      </h4>
+                      <ul className="space-y-2">
+                        {product.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center space-x-2">
+                            <Leaf className="h-4 w-4 text-[#00ADB5] flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground font-medium">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-base font-bold text-foreground mb-3 flex items-center">
+                        <Shield className="h-4 w-4 text-[#00ADB5] mr-2" />
+                        Product Overview
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {product.detailedDescription}
+                      </p>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-[#00ADB5]/5 to-[#180161]/5 rounded-xl p-4 border border-[#00ADB5]/10">
+                      <h4 className="text-base font-bold text-foreground mb-3 flex items-center">
+                        <Award className="h-4 w-4 text-[#00ADB5] mr-2" />
+                        Technical Specifications
+                      </h4>
+                      <ul className="space-y-2">
+                        {product.specifications.map((spec, idx) => (
+                          <li key={idx} className="flex flex-col sm:flex-row sm:justify-between border-b border-[#00ADB5]/10 py-2 last:border-b-0">
+                            <span className="text-sm text-muted-foreground font-medium">{spec.split(":")[0]}:</span>
+                            <span className="text-sm font-semibold text-foreground">{spec.split(":")[1]}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-xl p-4 text-white text-center">
+                      <Crown className="h-6 w-6 mx-auto mb-2" />
+                      <h5 className="text-base font-bold mb-1">Premium Quality Assured</h5>
+                      <p className="text-xs opacity-90">Scientifically formulated for optimal results</p>
+                    </div>
                   </div>
                 </div>
 
-                <CardHeader className="text-center pb-6 pt-8 relative">
-                  {/* Background Decoration */}
-                  <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-[#00ADB5]/5 to-[#180161]/5 rounded-t-3xl"></div>
+                <div className="absolute top-4 right-4">
+                  <Sparkles className="h-5 w-5 text-[#00ADB5]/30" />
+                </div>
+                <div className="absolute bottom-4 left-4">
+                  <Sparkles className="h-4 w-4 text-[#180161]/30" />
+                </div>
+              </DialogContent>
+            </Dialog>
 
-                  <div className="relative z-10">
-                    <div className="relative mb-6">
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-r ${product.gradient} rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300`}
-                      ></div>
-                    </div>
-
-                    {/* {product.image && (
-                      <div className="mb-4 rounded-xl overflow-hidden shadow-md">
-                        <img src={product.image} alt={product.title} className="w-full h-48 object-cover" />
-                      </div>
-                    )} */}
-                    <CardTitle className="text-2xl text-foreground mb-3 group-hover:text-[#00ADB5] transition-colors duration-300">
-                      {product.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground text-base leading-relaxed">
-                      {product.description}
-                    </CardDescription>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="px-8 pb-8">
-                  {/* <ul className="space-y-4 mb-6">
-                    {product.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-4 group/item">
-                        <div className="bg-gradient-to-r from-[#00ADB5]/20 to-[#180161]/20 p-2 rounded-full group-hover/item:from-[#00ADB5]/40 group-hover/item:to-[#180161]/40 transition-all duration-300">
-                          <Leaf className="h-5 w-5 text-[#00ADB5]" />
-                        </div>
-                        <span className="text-muted-foreground font-medium group-hover/item:text-foreground transition-colors duration-300">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul> */}
-
-                  {/* View Details Button */}
-                  <Dialog open={openDialog === index} onOpenChange={(open) => setOpenDialog(open ? index : null)}>
-                    <DialogTrigger asChild>
-                      <Button 
-                        className={`w-full bg-gradient-to-r ${product.gradient} hover:opacity-90 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:scale-105`}
-                      >
-                        View Details
-                        <Sparkles className="ml-2 h-4 w-4" />
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-[95vw] sm:max-w-2xl lg:max-w-4xl max-h-[90vh] overflow-y-auto bg-card border-2 border-[#00ADB5]/20">
-                      <DialogHeader className="relative">
-                        {/* Background decoration */}
-                        <div className="absolute -top-6 -left-6 -right-6 h-20 sm:h-32 bg-gradient-to-r from-[#00ADB5]/10 to-[#180161]/10 rounded-t-3xl"></div>
-                        
-                        <div className="relative z-10 pt-2 sm:pt-4">
-                          <div className="flex items-center justify-center mb-3 sm:mb-4">
-                            <div
-                              className={`bg-gradient-to-r ${product.gradient} px-3 sm:px-6 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold text-white shadow-lg`}
-                            >
-                              {product.badge}
-                            </div>
-                          </div>
-                          <DialogTitle className="text-xl sm:text-2xl lg:text-3xl font-bold text-center bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent mb-3 sm:mb-4">
-                            {product.title}
-                          </DialogTitle>
-                        </div>
-                      </DialogHeader>
-
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6">
-                        {/* Product Image */}
-                        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-                          <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border-2 border-[#00ADB5]/20">
-                            <Image
-                              width={500}
-                              height={500}
-                              src={product.image} 
-                              alt={product.title} 
-                              className="w-full h-64 sm:h-56 lg:h-64 object-fit"
-                            />
-                          </div>
-                          
-                          {/* Key Features */}
-                          <div className="bg-gradient-to-br from-[#00ADB5]/5 to-[#180161]/5 rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-[#00ADB5]/20">
-                            <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 flex items-center">
-                              <Star className="h-4 w-4 sm:h-5 sm:w-5 text-[#00ADB5] mr-2" />
-                              Key Features
-                            </h4>
-                            <ul className="space-y-2 sm:space-y-3">
-                              {product.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-center space-x-2 sm:space-x-3">
-                                  <Leaf className="h-3 w-3 sm:h-4 sm:w-4 text-[#00ADB5] flex-shrink-0" />
-                                  <span className="text-sm sm:text-base text-muted-foreground font-medium">{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
-                        {/* Product Details */}
-                        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-                          {/* Description */}
-                          <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 flex items-center">
-                              <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-[#00ADB5] mr-2" />
-                              Product Overview
-                            </h4>
-                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                              {product.detailedDescription}
-                            </p>
-                          </div>
-
-                          {/* Specifications */}
-                          <div className="bg-gradient-to-br from-[#00ADB5]/5 to-[#180161]/5 rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-[#00ADB5]/20">
-                            <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 flex items-center">
-                              <Award className="h-4 w-4 sm:h-5 sm:w-5 text-[#00ADB5] mr-2" />
-                              Technical Specifications
-                            </h4>
-                            <ul className="space-y-2 sm:space-y-3">
-                              {product.specifications.map((spec, idx) => (
-                                <li key={idx} className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-2 border-b border-[#00ADB5]/10 last:border-b-0 gap-1 sm:gap-0">
-                                  <span className="text-sm sm:text-base text-muted-foreground font-medium">{spec.split(':')[0]}:</span>
-                                  <span className="text-sm sm:text-base font-semibold text-foreground">{spec.split(':')[1]}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Call to Action */}
-                          <div className="bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 text-white text-center">
-                            <Crown className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 mx-auto mb-2 sm:mb-3" />
-                            <h5 className="text-base sm:text-lg font-bold mb-1 sm:mb-2">Premium Quality Assured</h5>
-                            <p className="text-xs sm:text-sm opacity-90">Scientifically formulated for optimal results</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Decorative Elements */}
-                      <div className="absolute top-4 right-4">
-                        <Sparkles className="h-6 w-6 text-[#00ADB5]/30" />
-                      </div>
-                      <div className="absolute bottom-4 left-4">
-                        <Sparkles className="h-4 w-4 text-[#180161]/30" />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-
-                  {/* Decorative Corner */}
-                  <div className="absolute bottom-4 right-4">
-                    <Sparkles className="h-5 w-5 text-[#00ADB5]/30 group-hover:text-[#00ADB5] transition-colors duration-300" />
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="absolute bottom-3 right-3">
+              <Sparkles className="h-4 w-4 text-[#00ADB5]/30 group-hover:text-[#00ADB5] transition-colors duration-300" />
             </div>
-          ))}
-        </div>
+          </CardContent>
+        </Card>
+      </div>
+    ))}
+  </div>
+
 
         {/* Bottom Stats */}
 
