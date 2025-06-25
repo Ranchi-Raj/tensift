@@ -9,6 +9,8 @@ import HowItWorksSection from "./components/how-it-works-section"
 // import BenefitsSection from "./components/benefits-section"
 import ContactSection from "./components/contact-section"
 import Footer from "./components/footer"
+import OurImpact from "./components/our-impact"
+import WorkWithUs from "./components/work-with-us"
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
       <InnovationSection />
       <HowItWorksSection />
       {/* <BenefitsSection /> */}
+      <OurImpact />
+      <WorkWithUs />
       <ContactSection />
       <Footer />
     </div>

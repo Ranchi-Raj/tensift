@@ -47,7 +47,7 @@ export default function HowItWorksSection() {
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#00ADB5]/10 to-[#180161]/10 backdrop-blur-sm border border-[#00ADB5]/20 rounded-full px-4 py-2 mb-4">
             <Crown className="h-4 w-4 text-[#00ADB5]" />
             <span className="text-xs sm:text-sm font-bold bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">
-              Royal Process
+              Tensfit Process
             </span>
             <Star className="h-4 w-4 text-[#180161]" />
           </div>

@@ -71,7 +71,7 @@ export default function RecognitionSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold mb-3">
-            <span className="text-white">Recognition &</span>
+            <span className="text-white">Recognition & </span>
             <br className="sm:hidden" />
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
               Achievements
@@ -79,7 +79,7 @@ export default function RecognitionSection() {
           </h2>
           <p className="text-sm sm:text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
             Recognized for innovation and sustainability by top institutes and government bodies — we’re proud to lead with
-            <span className="text-white font-semibold"> purpose and impact</span>.
+            <span className="text-[#63dfe6] font-semibold"> purpose and impact</span>.
           </p>
         </div>
 

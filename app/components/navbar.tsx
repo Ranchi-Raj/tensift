@@ -20,7 +20,7 @@ export default function Navbar() {
     { name: "Products", href: "#products" },
     { name: "Innovation", href: "#innovation" },
     { name: "How it Works", href: "#how-it-works" },
-    { name: "Benefits", href: "#benefits" },
+    { name: "Our Impact", href: "#impact" },
     { name: "Contact", href: "#contact" },
   ]
 
@@ -32,19 +32,22 @@ export default function Navbar() {
           <div className="flex items-center space-x-4 group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-full blur-lg opacity-50 group-hover:opacity-80 transition" />
-              <div className="relative bg-gradient-to-br from-[#00ADB5] to-[#180161] p-3 rounded-full shadow-lg">
+              <div className="relative bg-white/30 p-3 rounded-full shadow-lg">
                 <Image src="/logo.png" width={40} height={40} alt="Logo" className="h-10 w-10" />
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#00ADB5] to-[#180161] rounded-lg blur opacity-30" />
-              <div className="relative bg-[#1a1a2e]/30 px-4 py-2 rounded-lg border border-[#00ADB5]/30">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-[#00ADB5]">
-                  Tensift Farmers
-                </h1>
-                <p className="text-xs text-[#E5F9FF]/70 font-medium">Fertilizer Pvt. Ltd.</p>
-              </div>
+            <div className="absolute -inset-1 bg-white/30  rounded-lg blur-xl opacity-30" />
+            <div className="relative bg-[#1a1a2e]/30 px-4 py-2 rounded-lg border border-[#00ADB5]/30 shadow-md">
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-wide bg-[#30cdd5] bg-clip-text text-transparent">
+                Tensift Farmers
+              </h1>
+              <p className="text-xs sm:text-sm text-[#E5F9FF]/70 font-medium tracking-wide">
+                Fertilizer Pvt. Ltd.
+              </p>
+  </div>
             </div>
+
           </div>
 
           {/* Desktop Nav */}
@@ -76,7 +79,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden pb-6">
-            <div className="bg-gradient-to-br from-[#1a1a2e] to-[#222831] rounded-xl p-6 border border-[#00ADB5]/20 shadow-xl backdrop-blur-sm">
+            <div className="bg-white/10 rounded-xl p-6 border border-[#00ADB5]/20 shadow-xl backdrop-blur-xl">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <a

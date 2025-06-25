@@ -34,7 +34,7 @@ export default function ContactSection() {
     <section id="contact" className="py-20 bg-[#F1F5F9] text-gray-800">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold mb-4 text-[#00ADB5]">Contact Us</h2>
+      <h2 className="text-4xl font-bold mb-4 text-[#00ADB5]"><span className="text-[#222831]">Contact</span> <span className="bg-gradient-to-r from-[#00ADB5] to-[#180161] bg-clip-text text-transparent">Tensfit Famers</span></h2>
       <p className="text-lg text-gray-600 max-w-3xl mx-auto">
         Ready to revolutionize your aquaculture operations? Get in touch with our team of experts today.
       </p>

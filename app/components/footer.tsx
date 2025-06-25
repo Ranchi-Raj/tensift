@@ -1,13 +1,14 @@
 import {
-  Fish,
+  // Fish,
   Mail,
   Phone,
   MapPin,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
+  // Facebook,
+  // Twitter,
+  // Linkedin,
+  // Instagram,
 } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const quickLinks = [
@@ -24,12 +25,12 @@ export default function Footer() {
     { name: "Consultation", href: "#" },
   ]
 
-  const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: "#", name: "Facebook" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", name: "Twitter" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#", name: "LinkedIn" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#", name: "Instagram" },
-  ]
+  // const socialLinks = [
+  //   { icon: <Facebook className="h-5 w-5" />, href: "#", name: "Facebook" },
+  //   { icon: <Twitter className="h-5 w-5" />, href: "#", name: "Twitter" },
+  //   { icon: <Linkedin className="h-5 w-5" />, href: "#", name: "LinkedIn" },
+  //   { icon: <Instagram className="h-5 w-5" />, href: "#", name: "Instagram" },
+  // ]
 
   return (
     <footer className="bg-gradient-to-br from-[#00ADB5] to-[#180161] text-white backdrop-blur-sm border-t border-white/10">
@@ -39,7 +40,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <div className="bg-white/20 p-2 rounded-full shadow-lg">
-                <Fish className="h-8 w-8 text-white" />
+                <Image src="/logo.png" alt="Tensift Farmers" width={32} height={32} className="h-8 w-8 text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Tensift Farmers</h3>
@@ -50,7 +51,7 @@ export default function Footer() {
               Revolutionizing aquaculture with sustainable feed solutions. Transforming waste into valuable resources
               for a better tomorrow.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -61,7 +62,7 @@ export default function Footer() {
                   {social.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
